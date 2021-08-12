@@ -18,14 +18,15 @@ const App = () => {
 
   const onFinish = (values) => {
     var words = values.convert.split(/\s+/);
+    var newWords = words;
 
     // if number is checked, don't add ''
     if (values.number) {
-      var newWords = words.map((word) => {
+      newWords = words.map((word) => {
         return word + ",";
       });
     } else {
-      var newWords = words.map((word) => {
+      newWords = words.map((word) => {
         return "'" + word + "',";
       });
     }
